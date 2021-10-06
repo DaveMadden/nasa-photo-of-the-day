@@ -1,18 +1,14 @@
 import React, { useState, useEffect } from "react";
 import axios from 'axios';
-// import { BASE_URL, API_KEY } from "./constants";
+import { BASE_URL, API_KEY } from "./constants";
 import "./App.css";
+import Pod from './Pod'
 
 function App() {
-  // console.log(BASE_URL, API_KEY);
+  const [pod, setPod] = useState(null);
 
-  //state
-  const [pod, setPod] = useState("");
-
-  //use effect
-  //api call
   useEffect(() => {
-    axios.get("https://api.nasa.gov/planetary/apod?api_key=Sd4BnSA8fJaXBOdPBsZNHlhipGXyDtHharhOlUoK")
+    axios.get(`${BASE_URL}${API_KEY}`)
       .then(res => {
         console.log(res.data);
         setPod(res.data);
@@ -20,14 +16,12 @@ function App() {
         console.log(err);
       })
   }, []);
-  //react render
+  
+  if (!pod) return <h3>Loading...</h3>;
 
-
-  return (
+  return(
     <div className="App">
-      <h1>{pod.title}</h1>
-      <img src={pod.url} />
-      <p>{pod.explanation}</p>
+      <Pod pod={pod}/>
     </div>
   );
 }
