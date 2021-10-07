@@ -1,5 +1,5 @@
 import React from "react";
-console.log("in pod.js")
+// console.log("in pod.js")
 
 const Pod = (props) => {
     const { title, url, explanation } = props.pod;

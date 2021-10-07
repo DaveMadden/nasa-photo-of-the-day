@@ -10,7 +10,7 @@ function App() {
   useEffect(() => {
     axios.get(`${BASE_URL}${API_KEY}`)
       .then(res => {
-        console.log(res.data);
+        // console.log(res.data);
         setPod(res.data);
       }).catch(err => {
         console.log(err);
