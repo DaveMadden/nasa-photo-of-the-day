@@ -1,3 +1,5 @@
+import { findByLabelText } from "@testing-library/react";
+
 // theme object here
 export default {
     primaryColor: 'royalBlue',
@@ -6,5 +8,6 @@ export default {
     black: 'black',
     white: 'white',
     darkgrey: '#343a40',
-    breakpointMobile: '(max-width: 550px)'
+    breakpointMobile: '(max-width: 550px)',
+    display: 'flex',
 }

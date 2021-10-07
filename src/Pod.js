@@ -10,11 +10,23 @@ const StyledPod = styled.div`
     border-radius: 5px;
     border: 2px solid black;
     background-color: ${pr => pr.theme.darkgrey};
-    color: ${pr => pr.theme.white}
-    p {
-        margin: 20px;
-        padding: 10px;
-    }
+    color: ${pr => pr.theme.white};
+    padding: 10px;
+    margin: auto;
+
+`
+const StyledP = styled.div`
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 5px;
+    border: 2px solid black;
+    background-color: ${pr => pr.theme.black};
+    color: ${pr => pr.theme.white};
+    padding: 20px;
+    margin: auto;
+    margin-top: 20px;
 `
 
 const Pod = (props) => {
@@ -24,7 +36,9 @@ const Pod = (props) => {
         <StyledPod>
             <h1>{title}</h1>
             <img src={url} alt={`${explanation}`} />
-            <p>{explanation}</p>
+            <StyledP>
+                <p>{explanation}</p>
+            </StyledP>
         </StyledPod>
     );
 };
