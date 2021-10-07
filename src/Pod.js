@@ -7,20 +7,22 @@ const StyledPod = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    border-radius: 5px;
+    border-radius: 15px;
     border: 2px solid black;
     background-color: ${pr => pr.theme.darkgrey};
     color: ${pr => pr.theme.white};
     padding: 10px;
     margin: auto;
-
+    img {
+        border-radius: 10px;
+    }
 `
 const StyledP = styled.div`
     width: 90%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    border-radius: 5px;
+    border-radius: 15px;
     border: 2px solid black;
     background-color: ${pr => pr.theme.black};
     color: ${pr => pr.theme.white};
@@ -28,6 +30,11 @@ const StyledP = styled.div`
     margin: auto;
     margin-top: 20px;
     font-family: serif;
+    &:hover {
+        transition: all 0.2s ease-in-out;
+        background-color: ${pr => pr.theme.secondaryColor};
+        color: black;
+    }
 `
 
 const Pod = (props) => {

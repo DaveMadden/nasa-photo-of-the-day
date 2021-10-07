@@ -3,7 +3,7 @@ import { findByLabelText } from "@testing-library/react";
 // theme object here
 export default {
     primaryColor: 'royalBlue',
-    secondaryColor: 'crimson',
+    secondaryColor: 'pink',
     tertiaryColor: 'mediumseagreen',
     black: 'black',
     white: 'white',
