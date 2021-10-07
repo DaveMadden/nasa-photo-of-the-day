@@ -27,6 +27,7 @@ const StyledP = styled.div`
     padding: 20px;
     margin: auto;
     margin-top: 20px;
+    font-family: serif;
 `
 
 const Pod = (props) => {
