@@ -1,13 +1,27 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import axios from 'axios';
+import { BASE_URL, API_KEY } from "./constants";
 import "./App.css";
+import Pod from './Pod'
 
 function App() {
-  return (
+  const [pod, setPod] = useState(null);
+
+  useEffect(() => {
+    axios.get(`${BASE_URL}${API_KEY}`)
+      .then(res => {
+        // console.log(res.data);
+        setPod(res.data);
+      }).catch(err => {
+        console.log(err);
+      })
+  }, []);
+  
+  if (!pod) return <h3>Loading...</h3>;
+
+  return(
     <div className="App">
-      <p>
-        Read through the instructions in the README.md file to build your NASA
-        app! Have fun <span role="img" aria-label='go!'>🚀</span>!
-      </p>
+      <Pod pod={pod}/>
     </div>
   );
 }
